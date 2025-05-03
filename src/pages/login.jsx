@@ -1,11 +1,16 @@
 import React from "react";
 
 function Login() {
+    let getFormData = (evento) => {
+        console.log("formulario:",evento);
+
+    }
+
   return (
     <div className="d-flex justify-content-center align-items-center vh-100 bg-light">
       <div className="p-4 bg-white rounded shadow" style={{ maxWidth: "400px", width: "100%" }}>
         <h2 className="text-center mb-4 fw-bold">Iniciar Sesión</h2>
-        <form>
+        <form onSubmit={(evento)=>getFormData(evento)}>
           <div className="mb-3">
             <label htmlFor="email" className="form-label">Correo electrónico</label>
             <input
