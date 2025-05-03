@@ -1,8 +1,16 @@
 import React from "react";
 
 function Login() {
+    //let (email,setEmail)= .useState("");
+    //let (password,setPassword)= .useState("");
     let getFormData = (evento) => {
-        console.log("formulario:",evento);
+        console.log("formulario:",evento)
+        evento.preventDefault(); // Evita el comportamiento por defecto del formulario
+        let email = evento.target.email.value; // Obtiene el valor del campo de correo electrónico
+        let password = evento.target.password.value; // Obtiene el valor del campo de contraseña
+        console.log("email:",email) // Muestra el correo electrónico en la consola
+        console.log("password:",password) // Muestra la contraseña en la consola
+        // Aquí puedes agregar la lógica para enviar los datos al servidor o realizar la autenticación  
 
     }
 
@@ -13,11 +21,8 @@ function Login() {
         <form onSubmit={(evento)=>getFormData(evento)}>
           <div className="mb-3">
             <label htmlFor="email" className="form-label">Correo electrónico</label>
-            <input
-              type="email"
-              className="form-control"
-              id="email"
-              placeholder="tucorreo@ejemplo.com"
+            <input type="email"className="form-control"id="email"placeholder="tucorreo@ejemplo.com"
+              //value={email} onChange={(e)=>setEmail(e.target.value)}
             />
           </div>
           <div className="mb-3">
